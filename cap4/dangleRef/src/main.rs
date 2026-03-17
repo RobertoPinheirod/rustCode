@@ -4,5 +4,5 @@ fn main() {
 
 fn dangle() -> &String {
    let s = String::from("Salve");
-   &s
+   &s  // Tentando retornar uma referência para algo que vai sumir
 }
