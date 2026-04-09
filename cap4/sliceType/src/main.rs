@@ -11,5 +11,6 @@ fn primeiras_palavras(s : &String) -> usize {
 fn main() {
     let mut s = String::from("Fala compadre");
     let palavra = primeiras_palavras(&s);
+    print!("\n O espaco comeca em {} \n", palavra);
     s.clear();
 }
