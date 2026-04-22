@@ -5,6 +5,7 @@ enum BrState {
     Minas,
 }
 
+#[derive(Debug)] // pra poder inspecionar o estado
 enum Coin{
    Penny,
    Nickel,
@@ -27,7 +28,6 @@ fn value_in_cents(coin:Coin) -> u8{
 
 use std::io;
 
-
 fn main() {
     let  moeda : Coin;
     let mut numero_str = String::new();
@@ -36,7 +36,7 @@ fn main() {
 
     match numero {
           0..=1 => moeda = Coin::Penny,
-          2..=5 => moeda = Coin::Nickel,
+          2..=5 => {moeda = Coin::Nickel; println!("A moeda eh niquel");},
           6..=10 => moeda = Coin::Dime,
           11..=25 => moeda = Coin::Quarter(BrState::RioDeJaneiro),
           _      => {
@@ -48,4 +48,5 @@ fn main() {
 
     let valor = value_in_cents( moeda );
     println!("A moeda eh : {:?}", valor);
+    //2println!(" e a enum moeda é {:?}", moeda);
 }
